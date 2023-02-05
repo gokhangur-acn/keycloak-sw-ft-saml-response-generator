@@ -5,32 +5,20 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.customization.keycloakAuthenticator</groupId>
-    <artifactId>keycloak-swıft-saml-response-generator</artifactId>
+    <artifactId>keycloak-swift-saml-response-generator</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
-        <!-- general settings -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>11</java.version>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+
         <!-- dependency versions -->
-        <lombok.version>1.18.22</lombok.version>
         <keycloak.version>15.0.2</keycloak.version>
-        <auto-service.version>1.0</auto-service.version>
-        <jackson.version>2.12.1</jackson.version>
-        <resteasy-jaxrs.version>3.15.1.Final</resteasy-jaxrs.version>
-        <jboss-servlet-api.version>2.0.0.Final</jboss-servlet-api.version>
-        <testcontainers-keycloak.version>1.7.0</testcontainers-keycloak.version>
-        <assertj-core.version>3.19.0</assertj-core.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-            <version>${lombok.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-server-spi</artifactId>
@@ -52,7 +40,6 @@
             <scope>provided</scope>
         </dependency>
 
-
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-services</artifactId>
@@ -66,8 +53,6 @@
             <version>${keycloak.version}</version>
             <scope>provided</scope>
         </dependency>
-
-
     </dependencies>
 
     <build>
@@ -82,7 +67,7 @@
                         <manifestEntries>
                             <!-- Adding explicit dependencies to avoid class-loading issues at runtime -->
                             <Dependencies>
-                                <![CDATA[org.keycloak.keycloak-common,org.keycloak.keycloak-core,org.keycloak.keycloak-server-spi,org.keycloak.keycloak-saml-core,org.keycloak.keycloak-saml-core-public,org.keycloak.keycloak-server-spi-private,org.apache.httpcomponents,org.keycloak.keycloak-services,org.jboss.logging,javax.api,javax.jms.api,javax.transaction.api,com.fasterxml.jackson.core.jackson-core,com.fasterxml.jackson.core.jackson-annotations,com.fasterxml.jackson.core.jackson-databind]]></Dependencies>
+                                <![CDATA[org.keycloak.keycloak-common,org.keycloak.keycloak-core,org.keycloak.keycloak-server-spi,org.keycloak.keycloak-saml-core,org.keycloak.keycloak-saml-core-public,org.keycloak.keycloak-server-spi-private,org.keycloak.keycloak-services]]></Dependencies>
                         </manifestEntries>
                     </archive>
                 </configuration>
