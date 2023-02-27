@@ -52,9 +52,7 @@ public class CustomSamlProtocol extends SamlProtocol {
         policyOIDNElement.setTextContent("SWIFT_OID");
 
         authContextInfoElement.appendChild(netWorkElement);
-
         authContextInfoElement.appendChild(subjectDNElement);
-
         authContextInfoElement.appendChild(policyOIDNElement);
 
         return authContextInfoElement;
